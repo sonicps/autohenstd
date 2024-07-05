@@ -69,7 +69,7 @@ if [ $USBETHERNET = true ] ; then
 	coproc read -t 5 && wait "$!" || true
 	sudo ip link set $INTERFACE up
 fi
-echo -e "\n\033[36m$\033[92m\nFirmware:\033[93m $FIRMWAREVERSION\033[92m\nInterface:\033[93m $INTERFACE\033[0m" | sudo tee /dev/tty1
+echo -e "\n\033[36m$\033[92m\nFirmware:\033[93m $FIRMWAREVERSION\033[92m\nInterface:\033[93m $\033[0m" | sudo tee /dev/tty1
 echo -e "\033[92mPPPwn:\033[93m C++ $CPPBIN \033[0m" | sudo tee /dev/tty1
 if [ $VMUSB = true ] ; then
    UDEV=$(sudo blkid | grep '^/dev/sd' | cut -f1 -d':')
